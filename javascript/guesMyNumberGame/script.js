@@ -1,18 +1,6 @@
 'use strict';
-// DOM (document object model) to manipulate html & css
-// Get <p> tag with class .message and print the text content to console
-/*
-const message = document.querySelector('.message').textContent;
-console.log(message);
+// I made this for my Udemy JavaScript course top learn about DOM 
 
-document.querySelector('.message').textContent = 'Correct Number!';
-
-document.querySelector('.number').textContent = 13;
-document.querySelector('.score').textContent = 10;
-
-document.querySelector('.guess').value = 23;
-console.log(document.querySelector('.guess').value);
-*/
 // For the score numbers and secret number
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
