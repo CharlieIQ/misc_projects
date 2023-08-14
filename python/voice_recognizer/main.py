@@ -24,4 +24,18 @@ def text():
     return spoken_text
 
 
-print(f"You said: \n{'*'*50}\n {text()} \n{'*'*50}")
+
+
+trigger = int(input("""Enter 1 to run once\nEnter 2 to run indefinitely\n0 to quit\n"""))
+
+if trigger == 1:
+    said_text = text()
+    print(f"You said: \n{'*'*50}\n {said_text} \n{'*'*50}")
+    trigger = int(input("""Enter 1 to run once\nEnter 2 to run indefinitely\n0 to quit\n"""))
+elif trigger == 2:
+    while True:
+        said_text = text()
+        print(f"You said: \n{'*'*50}\n {said_text} \n{'*'*50}")
+else:
+    print('Stoppting:')
+    quit()
