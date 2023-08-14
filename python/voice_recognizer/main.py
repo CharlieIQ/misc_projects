@@ -1,6 +1,5 @@
 import speech_recognition as sr
 import pyttsx3
-
 # Theoretically this will speak what has been said
 # def SpeakText(command):
 
@@ -33,7 +32,7 @@ if trigger == 1:
     print(f"You said: \n{'*'*50}\n {said_text} \n{'*'*50}")
     trigger = int(input("""Enter 1 to run once\nEnter 2 to run indefinitely\n0 to quit\n"""))
 elif trigger == 2:
-    while True:
+    while trigger == 2:
         said_text = text()
         print(f"You said: \n{'*'*50}\n {said_text} \n{'*'*50}")
 else:
