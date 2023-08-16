@@ -5,7 +5,7 @@ const divide_button = document.getElementsByClassName('divideButton');
 // const equalsCalculate = document.getElementById('equals');
 
 const header = document.querySelector('h1')
-header.textContent = "cum";
+header.textContent = "test please work!!!";
 
 let number1 = Number(document.getElementsByClassName('numberInputOne').value);
 let number2 = Number(document.getElementsByClassName('numberInputTwo').value);
