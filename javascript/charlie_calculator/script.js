@@ -4,7 +4,9 @@ const multiply_button = document.getElementsByClassName('multiplyButton');
 const divide_button = document.getElementsByClassName('divideButton');
 // const equalsCalculate = document.getElementById('equals');
 
-document.getElementsByClassName('calcHeader').textContent = "cum";
+const header = document.querySelector('h1')
+header.textContent = "cum";
+
 let number1 = Number(document.getElementsByClassName('numberInputOne').value);
 let number2 = Number(document.getElementsByClassName('numberInputTwo').value);
 
