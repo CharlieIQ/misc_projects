@@ -8,7 +8,7 @@ class Solution(object):
             print(num)
             if num * num == x:
                 return num
-            if num
+            
         
 
 # square_root1 = Solution().mySqrt(9)
