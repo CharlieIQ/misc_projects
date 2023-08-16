@@ -8,8 +8,9 @@ class Solution(object):
             print(num)
             if num * num == x:
                 return num
+            elif (num/2 < x) & (num/4 > x): # Still does nothing
+                return int(num)
             
-        
 
 # square_root1 = Solution().mySqrt(9)
 square_root2 = Solution().mySqrt(8)
