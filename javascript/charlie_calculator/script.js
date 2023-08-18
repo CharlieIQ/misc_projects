@@ -1,7 +1,7 @@
 /*
 I made this as a personal project to work on when I am bored
 */
-
+'use strict';
 // Variables for all of the buttons on page
 const add_button = document.querySelector('.addbutton');
 const subtract_button = document.querySelector('.subtractbutton');
