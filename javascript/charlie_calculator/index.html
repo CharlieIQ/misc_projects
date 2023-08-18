@@ -9,8 +9,8 @@
 </head>
 <body>
     <h1 class="calcheader">Charlie's Calculator</h1>
-    <div id="maincalculator">
-        
+        <!-- Normal operators still here -->
+        <div id="maincalculator">
             <form id="Calculator">
                 <h2 id="enterNumsLabel">Basic operators</h2>
                 <h3 id="enternumslabeldescription">Enter numbers here:</h2>
@@ -28,7 +28,22 @@
 
                 <p id="resultlabel" class="resultlabel"><span class="result">Result</span></p>
             </form>
-    </div>
+        </div>
+        <!-- Single number operations below -->
+        <div id="singlenumbercalculator">
+            <form id="singlenumberoperations">
+                <h2 id="entersinglenumlabel">Single number operations</h2>
+                <h3 id="entersinglenumlabeldescription">Enter number here:</h2>
+                <!-- User number inputs -->
+                <input type="number" class="singlenuminput" placeholder="Type number here"></input>
+                <br>
+                <!-- Buttons for operators -->
+                <button class="squarebutton">^2</button>
+                <button class="cubebutton">^3</button>
+
+                <p id="singlenumberresultlebel" class="singlenumberresult"><span class="resultsingle">Result</span></p>
+            </form>
+        </div>
     
 
     <script src="../charlie_calculator/script.js"></script>

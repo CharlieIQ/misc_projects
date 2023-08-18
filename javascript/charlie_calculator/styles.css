@@ -14,15 +14,16 @@ body {
     border-radius: 25px;
     padding: 10px;
 }
-
-#maincalculator{
+    
+#maincalculator, #singlenumbercalculator{
+    margin-top: 20px;
     margin-left: 10%;
     margin-right: 10%;
     width: 80%;
 
 }
 
-#Calculator {
+#Calculator, #singlenumberoperations {
     background-color: white;
 
     text-align: center;
@@ -32,12 +33,12 @@ body {
 
 }
 
-#enterNumsLabel {
+#enterNumsLabel, #entersinglenumlabel {
     text-decoration: underline;
     margin-top: 5px;
     font-size: 40px;
 }
-#enternumslabeldescription{
+#enternumslabeldescription, #entersinglenumlabeldescription{
     font-size: 30px;
 }
 input {
@@ -56,79 +57,23 @@ input[type=number]{
     text-align: center;
 }
 
-.addbutton{
+.addbutton, .subtractbutton, .multiplybutton, 
+.dividebutton, .exponentbutton,
+.modulusbutton, .squarebutton, .cubebutton{
     height: 70px;
     width: 70px;
     text-align: center;
     font-size: 50px;
     background-color: white;
 }
-.addbutton:hover{
+.addbutton:hover, .subtractbutton:hover, .multiplybutton:hover,
+.dividebutton:hover, .exponentbutton:hover, .modulusbutton:hover,
+.squarebutton:hover, .cubebutton:hover{
     color: white;
     background-color: black;
 }
 
-.subtractbutton{
-    height: 70px;
-    width: 70px;
-    text-align: center;
-    font-size: 50px;
-    background-color: white;
-}
-.subtractbutton:hover{
-    color: white;
-    background-color: black;
-}
-
-.multiplybutton{
-    height: 70px;
-    width: 70px;
-    text-align: center;
-    font-size: 50px;
-    background-color: white;
-}
-.multiplybutton:hover{
-    color: white;
-    background-color: black;
-}
-
-.dividebutton{
-    height: 70px;
-    width: 70px;
-    text-align: center;
-    font-size: 50px;
-    background-color: white;
-}
-.dividebutton:hover{
-    color: white;
-    background-color: black;
-}
-
-.exponentbutton{
-    height: 70px;
-    width: 70px;
-    text-align: center;
-    font-size: 50px;
-    background-color: white;
-}
-.exponentbutton:hover{
-    color: white;
-    background-color: black;
-}
-
-.modulusbutton{
-    height: 70px;
-    width: 70px;
-    text-align: center;
-    font-size: 50px;
-    background-color: white;
-}
-.modulusbutton:hover{
-    color: white;
-    background-color: black;
-}
-
-#resultlabel {
+#resultlabel, #singlenumberresultlebel {
     margin-bottom: 5px;
     border-radius: 25px;
     padding: 10px;

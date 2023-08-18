@@ -1,15 +1,20 @@
 /*
 I made this as a personal project to work on when I am bored
+This probably isn't cleam but I don't care 😂
 */
 'use strict';
-// Variables for all of the buttons on page
+// Variables for all of the basic operator buttons on page
 const add_button = document.querySelector('.addbutton');
 const subtract_button = document.querySelector('.subtractbutton');
 const multiply_button = document.querySelector('.multiplybutton');
 const divide_button = document.querySelector('.dividebutton');
 const exponent_button = document.querySelector('.exponentbutton')
 const modulus_button = document.querySelector('.modulusbutton')
+// For single number operations
+const square_button = document.querySelector('.squarebutton');
+const cube_button = document.querySelector('.cubebutton');
 
+// All of the basic operations
 // For adding button
 add_button.addEventListener('click', function (e) {
     // Gets the numbers inputted
@@ -37,7 +42,7 @@ multiply_button.addEventListener('click', function (e) {
     // Gets the numbers inputted
     let number1 = Number(document.querySelector('.numberinputone').value);
     let number2 = Number(document.querySelector('.numberinputtwo').value);
-
+    
     e.preventDefault() // Prevents refresh
     let product = number1 * number2; // Multiplies numbers together 
     document.querySelector('.result').textContent = product;
@@ -74,4 +79,23 @@ modulus_button.addEventListener('click', function (e) {
     e.preventDefault() // Prevents refresh
     let modulus = number1 % number2; // Perfomns modulus operation
     document.querySelector('.result').textContent = modulus;
+});
+ 
+// Single number operations
+square_button.addEventListener('click', function (e) {
+    // Gets the numbers inputted
+    let singlenumber = Number(document.querySelector('.singlenuminput').value);
+
+    e.preventDefault() // Prevents refresh
+    let square = singlenumber ** 2; // Perfomns modulus operation
+    document.querySelector('.resultsingle').textContent = square;
+});
+
+cube_button.addEventListener('click', function (e) {
+    // Gets the numbers inputted
+    let singlenumber = Number(document.querySelector('.singlenuminput').value);
+
+    e.preventDefault() // Prevents refresh
+    let cube = singlenumber ** 3; // Perfomns modulus operation
+    document.querySelector('.resultsingle').textContent = cube;
 });
