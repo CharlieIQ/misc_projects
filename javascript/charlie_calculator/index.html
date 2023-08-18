@@ -8,13 +8,13 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 <body>
+    <h1 class="calcheader">Charlie's Calculator</h1>
     <div id="maincalculator">
         
-        <h1 class="calcheader">Charlie's Calculator</h1>
             <form id="Calculator">
                 <h2 id="enterNumsLabel">Basic operators</h2>
-                <h3 >Enter numbers here:</h2>
-
+                <h3 id="enternumslabeldescription">Enter numbers here:</h2>
+                <!-- User number inputs -->
                 <input type="number" class="numberinputone" placeholder="Type first number here"></input>
                 <input type="number" class="numberinputtwo" placeholder="Type second number here"></input>
                 <br>
@@ -24,6 +24,7 @@
                 <button class="multiplybutton">x</button>
                 <button class="dividebutton">÷</button>
                 <button class="exponentbutton">^</button>
+                <button class="modulusbutton">%</button>
 
                 <p id="resultlabel" class="resultlabel"><span class="result">Result</span></p>
             </form>

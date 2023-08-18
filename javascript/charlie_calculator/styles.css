@@ -5,33 +5,43 @@ body {
     font-family: 'Maven Pro', sans-serif;
 }
 
-#maincalculator{
-    margin-left: 100px;
-}
-
 .calcheader {
     background-color: white;
-    margin-left: 58px; 
-    width: fit-content;
+    margin-left: 35%; 
+    margin-right: 35%;
+    width: 30%;
+    text-align: center;
     border-radius: 25px;
     padding: 10px;
 }
 
-#enterNumsLabel {
-    margin-top: 5px;
+#maincalculator{
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+
 }
 
 #Calculator {
     background-color: white;
-    width: fit-content;
+
     text-align: center;
     height: fit-content;
     border-radius: 25px;
     padding: 10px;
+
 }
 
+#enterNumsLabel {
+    text-decoration: underline;
+    margin-top: 5px;
+    font-size: 40px;
+}
+#enternumslabeldescription{
+    font-size: 30px;
+}
 input {
-    width: 80%;
+    width: 85%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -42,47 +52,80 @@ input {
 }
 
 input[type=number]{
+    font-size: 20px;
     text-align: center;
 }
 
 .addbutton{
-    height: 40px;
-    width: 40px;
+    height: 70px;
+    width: 70px;
     text-align: center;
-    font-size: 30px;
+    font-size: 50px;
     background-color: white;
+}
+.addbutton:hover{
+    color: white;
+    background-color: black;
 }
 
 .subtractbutton{
-    height: 40px;
-    width: 40px;
+    height: 70px;
+    width: 70px;
     text-align: center;
-    font-size: 30px;
+    font-size: 50px;
     background-color: white;
+}
+.subtractbutton:hover{
+    color: white;
+    background-color: black;
 }
 
 .multiplybutton{
-    height: 40px;
-    width: 40px;
+    height: 70px;
+    width: 70px;
     text-align: center;
-    font-size: 30px;
+    font-size: 50px;
     background-color: white;
+}
+.multiplybutton:hover{
+    color: white;
+    background-color: black;
 }
 
 .dividebutton{
-    height: 40px;
-    width: 40px;
+    height: 70px;
+    width: 70px;
     text-align: center;
-    font-size: 30px;
+    font-size: 50px;
     background-color: white;
+}
+.dividebutton:hover{
+    color: white;
+    background-color: black;
 }
 
 .exponentbutton{
-    height: 40px;
-    width: 40px;
+    height: 70px;
+    width: 70px;
     text-align: center;
-    font-size: 30px;
+    font-size: 50px;
     background-color: white;
+}
+.exponentbutton:hover{
+    color: white;
+    background-color: black;
+}
+
+.modulusbutton{
+    height: 70px;
+    width: 70px;
+    text-align: center;
+    font-size: 50px;
+    background-color: white;
+}
+.modulusbutton:hover{
+    color: white;
+    background-color: black;
 }
 
 #resultlabel {
