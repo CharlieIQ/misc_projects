@@ -1,3 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+
 body {
-    background-image: linear-gradient(to right,blue, cyan, white);
+    background-color: black;
+    font-family: 'Maven Pro', sans-serif;
 }
+
+#maincalculator{
+    margin-left: 100px;
+}
+
+.calcheader {
+    background-color: white;
+    margin-left: 58px; 
+    width: fit-content;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+#enterNumsLabel {
+    margin-top: 5px;
+}
+
+#Calculator {
+    background-color: white;
+    width: fit-content;
+    text-align: center;
+    height: fit-content;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+input {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color:black;
+}
+
+input[type=number]{
+    text-align: center;
+}
+
+.addbutton{
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    font-size: 30px;
+    background-color: white;
+}
+
+.subtractbutton{
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    font-size: 30px;
+    background-color: white;
+}
+
+.multiplybutton{
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    font-size: 30px;
+    background-color: white;
+}
+
+.dividebutton{
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    font-size: 30px;
+    background-color: white;
+}
+
+#resultlabel {
+    margin-bottom: 5px;
+    border-radius: 25px;
+    padding: 10px;
+    font-size: 25px;
+    border: 2px solid #000000;
+}
+

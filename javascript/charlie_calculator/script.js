@@ -1,17 +1,53 @@
-const add_button = document.getElementsByClassName('addButton')[0];
-const subtract_button = document.getElementsByClassName('subtractButton');
-const multiply_button = document.getElementsByClassName('multiplyButton');
-const divide_button = document.getElementsByClassName('divideButton');
+const add_button = document.querySelector('.addbutton');
+const subtract_button = document.querySelector('.subtractbutton');
+const multiply_button = document.querySelector('.multiplybutton');
+const divide_button = document.querySelector('.dividebutton');
 // const equalsCalculate = document.getElementById('equals');
 
-const pageHeader = document.getElementsByClassName('.calcHeader')
-pageHeader.innerText = "test please work!!!";
+// I was having issues with DOM and this is to test fixing it
+const pageHeader = document.querySelector('.calcheader')
+pageHeader.textContent = "Charlie Calculator";
 
-let number1 = Number(document.getElementsByClassName('numberInputOne').value);
-let number2 = Number(document.getElementsByClassName('numberInputTwo').value);
+// For adding numbers
+add_button.addEventListener('click', function (e) {
+    // Gets the numbers inputted
+    let number1 = Number(document.querySelector('.numberinputone').value);
+    let number2 = Number(document.querySelector('.numberinputtwo').value);
 
-add_button.addEventListener('click', function () {
-    let sum = number1 + number2;
-    document.getElementsByClassName('result').textContent = sum;
+    e.preventDefault() // Prevents refresh
+    let sum = number1 + number2; // Adds numbers together 
+    document.querySelector('.result').textContent = sum;
 });
 
+// For subtract button
+subtract_button.addEventListener('click', function (e) {
+    // Gets the numbers inputted
+    let number1 = Number(document.querySelector('.numberinputone').value);
+    let number2 = Number(document.querySelector('.numberinputtwo').value);
+
+    e.preventDefault() // Prevents refresh
+    let difference = number1 - number2; // Subtracts the 2 numbers 
+    document.querySelector('.result').textContent = difference;
+});
+
+// For multiply button
+multiply_button.addEventListener('click', function (e) {
+    // Gets the numbers inputted
+    let number1 = Number(document.querySelector('.numberinputone').value);
+    let number2 = Number(document.querySelector('.numberinputtwo').value);
+
+    e.preventDefault() // Prevents refresh
+    let product = number1 * number2; // Multiplies numbers together 
+    document.querySelector('.result').textContent = product;
+});
+
+// For divide buttons
+divide_button.addEventListener('click', function (e) {
+    // Gets the numbers inputted
+    let number1 = Number(document.querySelector('.numberinputone').value);
+    let number2 = Number(document.querySelector('.numberinputtwo').value);
+
+    e.preventDefault() // Prevents refresh
+    let quotient = number1 / number2; // Divides the numbers
+    document.querySelector('.result').textContent = quotient;
+});

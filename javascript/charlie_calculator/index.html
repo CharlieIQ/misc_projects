@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Calculator</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 <body>
+    <div id="maincalculator">
+        
+        <h1 class="calcheader">Charlie's Calculator</h1>
+            <form id="Calculator">
+                <h2 id="enterNumsLabel">Basic operators</h2>
+                <h3 >Enter numbers here:</h2>
+
+                <input type="number" class="numberinputone" placeholder="Type first number here"></input>
+                <input type="number" class="numberinputtwo" placeholder="Type second number here"></input>
+                <br>
+                <button class="addbutton">+</button>
+                <button class="subtractbutton">-</button>
+                <button class="multiplybutton">x</button>
+                <button class="dividebutton">÷</button>
+
+                <p id="resultlabel" class="resultlabel"><span class="result">Result</span></p>
+            </form>
+    </div>
     
-
-    <h1 class="calcHeaderLabel"><span class="calcHeader">Charlie's Calculator</span></h1>
-    <form id="Calculator">
-        <input class="numberInputOne" placeholder="Type first number here"></input>
-        <input class="numberInputTwo" placeholder="Type second number here"></input>
-
-        <button class="addButton">+</button>
-        <button class="subtractButton">-</button>
-        <button class="multiplyButton">x</button>
-        <button class="divideButton">÷</button>
-        <p class="result-label"><span class="result">Result</span></p>
-
-    </form>
 
     <script src="../charlie_calculator/script.js"></script>
 </body>

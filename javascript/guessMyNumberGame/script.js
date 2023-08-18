@@ -10,6 +10,7 @@ document.querySelector('.number').textContent = '?';
 const againButton = document.querySelector('.again')
 // For when the Check! button is clicked
 const buttonClick = document.querySelector('.check');
+
 buttonClick.addEventListener('click', function () {
     const guess = Number(document.querySelector('.guess').value);
 
