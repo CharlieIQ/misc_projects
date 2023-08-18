@@ -77,6 +77,14 @@ input[type=number]{
     background-color: white;
 }
 
+.exponentbutton{
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    font-size: 30px;
+    background-color: white;
+}
+
 #resultlabel {
     margin-bottom: 5px;
     border-radius: 25px;
