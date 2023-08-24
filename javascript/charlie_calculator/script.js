@@ -13,7 +13,8 @@ const modulus_button = document.querySelector('.modulusbutton')
 // For single number operations
 const square_button = document.querySelector('.squarebutton');
 const cube_button = document.querySelector('.cubebutton');
-
+// For equation solver
+const equation = document.querySelector('.equationinput');
 // All of the basic operations
 // For adding button
 add_button.addEventListener('click', function (e) {
@@ -99,3 +100,5 @@ cube_button.addEventListener('click', function (e) {
     let cube = singlenumber ** 3; // Perfomns modulus operation
     document.querySelector('.resultsingle').textContent = cube;
 });
+
+
