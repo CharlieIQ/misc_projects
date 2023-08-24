@@ -43,4 +43,3 @@ for (let index = 0; index < blockNodelist.length; index++){
         }
 })}
     
-    
