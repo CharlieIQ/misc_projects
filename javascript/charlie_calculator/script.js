@@ -106,7 +106,7 @@ let userInput = "4+4";
 
 function inputParser(expression_input){
     let operator = expression_input.search(/[+,-,/,*]/i);
-    // Will return the 
+    // Will return the operator in uder input if found
     return String(expression_input.slice(operator, operator+1));
 } 
 
