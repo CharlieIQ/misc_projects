@@ -1,6 +1,6 @@
 /*
 I made this as a personal project to work on when I am bored
-This probably isn't cleam but I don't care 😂
+This probably isn't clean but I don't care 😂
 */
 'use strict';
 // Variables for all of the basic operator buttons on page
@@ -101,11 +101,12 @@ cube_button.addEventListener('click', function (e) {
     document.querySelector('.resultsingle').textContent = cube;
 });
 
-/* TO TEST PARSING
+
 let userInput = "4+4";
 
 function inputParser(expression_input){
     let operator = expression_input.search(/[+,-,/,*]/i);
+    // Will return the 
     return String(expression_input.slice(operator, operator+1));
 } 
 
@@ -123,8 +124,15 @@ class Operations {
         let subtract = this.numberone - this.numbertwo;
         return subtract
     }
-
+    multiply(){
+        let multiply = this.numberone * this.numbertwo;
+        return multiply;
+    }
+    divide() {
+        let divide = this.numberone / this.numbertwo;
+        return divide
+    }
 }
 
 console.log(inputParser(userInput));
-*/
+
