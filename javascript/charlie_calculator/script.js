@@ -109,7 +109,7 @@ equation.addEventListener('click', function (e){
     e.preventDefault();
 
     function operationParser(expression_input){
-        let operator = expression_input.search(/[+, -, /, *, ^]/i);
+        let operator = expression_input.search(/[+, \-, /, *, \^]/i);
         // Will return the operator in user input if found
         return String(expression_input.slice(operator, operator+1));
     } 
