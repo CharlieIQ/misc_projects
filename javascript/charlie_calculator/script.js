@@ -101,21 +101,28 @@ cube_button.addEventListener('click', function (e) {
     document.querySelector('.resultsingle').textContent = cube;
 });
 
+// For an inputted equation
 equation.addEventListener('click', function (e){
     let userInput = String(document.querySelector('.equationinput').value);
     e.preventDefault();
 
-    function inputParser(expression_input){
+    function operationParser(expression_input){
         let operator = expression_input.search(/[+,-,/,*]/i);
         // Will return the operator in uder input if found
         return String(expression_input.slice(operator, operator+1));
     } 
 
+    function numParser(expression_input){
+        let numlist = expression_input.match(/\d+/g);
+        // Will return an array of numbers in input
+        return numlist;
+    }
+
+    // For all of the operations
     class Operations {
         constructor(numberone, numbertwo){
             this.numberone = numberone;
             this.numbertwo = numbertwo;
-            this.operator = operator;
         }
         add(){
             let add = this.numberone + this.numbertwo;
@@ -135,7 +142,29 @@ equation.addEventListener('click', function (e){
         }
     }
 
-    console.log(inputParser(userInput));
+    function displayResult(operator, numbers){
+        if (operator == '+'){
+            let equationsum = Number(numbers[0]) + Number(numbers[1]);
+            document.querySelector('.resultequation').textContent = equationsum;
+        }
+        else if (operator == '-'){
+            let equationdiff = Number(numbers[0]) - Number(numbers[1]);
+            document.querySelector('.resultequation').textContent = equationdiff;
+        }
+        else if (operator == '*'){
+            let equationproduct = Number(numbers[0]) * Number(numbers[1]);
+            document.querySelector('.resultequation').textContent = equationproduct;
+        }
+        else if (operator == '/'){
+            let equationquotient = Number(numbers[0]) / Number(numbers[1]);
+            document.querySelector('.resultequation').textContent = equationquotient;
+        }else{
+            alert("There is an error in the operator used!");
+        }
+    }
+
+
+    displayResult(operationParser(userInput), numParser(userInput));
 
 
 });
