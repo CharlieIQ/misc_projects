@@ -15,7 +15,7 @@ body {
     padding: 10px;
 }
     
-#maincalculator, #singlenumbercalculator, #quadraticsolvercalculator{
+#maincalculator, #singlenumbercalculator, #equationsolvercalculator{
     margin-top: 20px;
     margin-left: 10%;
     margin-right: 10%;
@@ -23,7 +23,7 @@ body {
 
 }
 
-#Calculator, #singlenumberoperations, #quadraticsolver {
+#Calculator, #singlenumberoperations, #equationsolver {
     background-color: white;
 
     text-align: center;
@@ -33,12 +33,12 @@ body {
 
 }
 
-#enterNumsLabel, #entersinglenumlabel, #quadraticheader {
+#enterNumsLabel, #entersinglenumlabel, #equationheader {
     text-decoration: underline;
     margin-top: 5px;
     font-size: 40px;
 }
-#enternumslabeldescription, #entersinglenumlabeldescription, #quadraticheaderdescription{
+#enternumslabeldescription, #entersinglenumlabeldescription, #equationheaderdescription{
     font-size: 30px;
 }
 input {
@@ -59,7 +59,8 @@ input[type=number]{
 
 .addbutton, .subtractbutton, .multiplybutton, 
 .dividebutton, .exponentbutton,
-.modulusbutton, .squarebutton, .cubebutton{
+.modulusbutton, .squarebutton, .cubebutton,
+.intercepts{
     height: 70px;
     width: 70px;
     text-align: center;
@@ -68,7 +69,7 @@ input[type=number]{
 }
 .addbutton:hover, .subtractbutton:hover, .multiplybutton:hover,
 .dividebutton:hover, .exponentbutton:hover, .modulusbutton:hover,
-.squarebutton:hover, .cubebutton:hover{
+.squarebutton:hover, .cubebutton:hover, .intercepts:hover{
     color: white;
     background-color: black;
 }

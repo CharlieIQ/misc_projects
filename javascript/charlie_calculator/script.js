@@ -14,7 +14,7 @@ const modulus_button = document.querySelector('.modulusbutton')
 const square_button = document.querySelector('.squarebutton');
 const cube_button = document.querySelector('.cubebutton');
 // For equation solver
-const equation = document.querySelector('.equationinput');
+const equation = document.querySelector('.intercepts');
 // All of the basic operations
 // For adding button
 add_button.addEventListener('click', function (e) {
@@ -101,6 +101,10 @@ cube_button.addEventListener('click', function (e) {
     document.querySelector('.resultsingle').textContent = cube;
 });
 
+equation.addEventListener('click', function (e){
+    let equationInput = Number(document.querySelector('.singlenuminput').value);
+});
+// TESTS FOR INPUT PARSING
 
 let userInput = "4+4";
 
@@ -113,8 +117,8 @@ function inputParser(expression_input){
 class Operations {
     constructor(numberone, numbertwo){
         this.numberone = numberone;
-        this.numbertwo = numbertwo
-        this.operator = operator
+        this.numbertwo = numbertwo;
+        this.operator = operator;
     }
     add(){
         let add = this.numberone + this.numbertwo;
