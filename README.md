@@ -6,4 +6,10 @@ These are many different projects, tests, and tomfoolery that I have worked on o
 
 If anyone sees this, thank you for taking the time to see what I've made. Some of the code is probably very primative and ugly, but it will be fun to go back and tweak it once I get better.
 
+## My Top Projects
+My top projects demonstrate my programming knowledge:
+- Charlie Calculator (Ongoing Project)
+- Binary Tree (Made doing a Udemy course)
+- Guess My Number (Made doing a Udemy course)
+
 *Made by Charlie McLaughlin All Rights Reserved*

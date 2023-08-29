@@ -3,6 +3,7 @@ I made this as a personal project to work on when I am bored
 This probably isn't clean but I don't care 😂
 */
 'use strict';
+
 // Variables for all of the basic operator buttons on page
 const add_button = document.querySelector('.addbutton');
 const subtract_button = document.querySelector('.subtractbutton');
@@ -15,6 +16,7 @@ const square_button = document.querySelector('.squarebutton');
 const cube_button = document.querySelector('.cubebutton');
 // For equation solver
 const equation = document.querySelector('.intercepts');
+
 // All of the basic operations
 // For adding button
 add_button.addEventListener('click', function (e) {
@@ -172,9 +174,6 @@ equation.addEventListener('click', function (e){
         }
     }
 
-
     displayResult(operationParser(userInput), numParser(userInput));
-
-
 });
 
