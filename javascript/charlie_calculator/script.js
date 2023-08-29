@@ -102,41 +102,41 @@ cube_button.addEventListener('click', function (e) {
 });
 
 equation.addEventListener('click', function (e){
-    let equationInput = Number(document.querySelector('.singlenuminput').value);
+    let userInput = String(document.querySelector('.equationinput').value);
+    e.preventDefault();
+
+    function inputParser(expression_input){
+        let operator = expression_input.search(/[+,-,/,*]/i);
+        // Will return the operator in uder input if found
+        return String(expression_input.slice(operator, operator+1));
+    } 
+
+    class Operations {
+        constructor(numberone, numbertwo){
+            this.numberone = numberone;
+            this.numbertwo = numbertwo;
+            this.operator = operator;
+        }
+        add(){
+            let add = this.numberone + this.numbertwo;
+            return add;
+        }
+        subtract() {
+            let subtract = this.numberone - this.numbertwo;
+            return subtract
+        }
+        multiply(){
+            let multiply = this.numberone * this.numbertwo;
+            return multiply;
+        }
+        divide() {
+            let divide = this.numberone / this.numbertwo;
+            return divide
+        }
+    }
+
+    console.log(inputParser(userInput));
+
+
 });
-// TESTS FOR INPUT PARSING
-
-let userInput = "4+4";
-
-function inputParser(expression_input){
-    let operator = expression_input.search(/[+,-,/,*]/i);
-    // Will return the operator in uder input if found
-    return String(expression_input.slice(operator, operator+1));
-} 
-
-class Operations {
-    constructor(numberone, numbertwo){
-        this.numberone = numberone;
-        this.numbertwo = numbertwo;
-        this.operator = operator;
-    }
-    add(){
-        let add = this.numberone + this.numbertwo;
-        return add;
-    }
-    subtract() {
-        let subtract = this.numberone - this.numbertwo;
-        return subtract
-    }
-    multiply(){
-        let multiply = this.numberone * this.numbertwo;
-        return multiply;
-    }
-    divide() {
-        let divide = this.numberone / this.numbertwo;
-        return divide
-    }
-}
-
-console.log(inputParser(userInput));
 
