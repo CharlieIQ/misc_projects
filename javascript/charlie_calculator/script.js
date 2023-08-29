@@ -107,8 +107,8 @@ equation.addEventListener('click', function (e){
     e.preventDefault();
 
     function operationParser(expression_input){
-        let operator = expression_input.search(/[+,-,/,*]/i);
-        // Will return the operator in uder input if found
+        let operator = expression_input.search(/[+, -, /, *, ^]/i);
+        // Will return the operator in user input if found
         return String(expression_input.slice(operator, operator+1));
     } 
 
@@ -140,6 +140,10 @@ equation.addEventListener('click', function (e){
             let divide = this.numberone / this.numbertwo;
             return divide
         }
+        exponent() {
+            let exponent = this.numberone ** this.numbertwo;
+            return exponent;
+        }
     }
 
     function displayResult(operator, numbers){
@@ -158,7 +162,12 @@ equation.addEventListener('click', function (e){
         else if (operator == '/'){
             let equationquotient = Number(numbers[0]) / Number(numbers[1]);
             document.querySelector('.resultequation').textContent = equationquotient;
-        }else{
+        }
+        else if (operator == "^"){
+            let equationexponent = Number(numbers[0]) ** Number(numbers[1]);
+            document.querySelector('.resultequation').textContent = equationexponent;
+        }
+        else{
             alert("There is an error in the operator used!");
         }
     }
