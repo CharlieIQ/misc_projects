@@ -64,9 +64,9 @@
             <canvas id="myChart"></canvas>
             <!-- For the grapth -->
             <script>
-                var xValues = [];
-                var yValues = [];
-                generateData("Math.sin(x)", 0, 10, 0.5);
+                const xValues = [];
+                const yValues = [];
+                generateData(`Math.sin(x)`, -10, 10, 0.1);
 
                 new Chart("myChart", {
                 type: "line",
@@ -83,7 +83,7 @@
                     legend: {display: false},
                     title: {
                     display: true,
-                    text: "y = sin(x)",
+                    text: "y = cos(x)",
                     fontSize: 16
                     }
                 }
