@@ -4,7 +4,7 @@ body {
     font-family: 'Karla', sans-serif;
     font-family: 'Maven Pro', sans-serif;
 }
-#containerone, #containertwo, #itemonetwo{
+#containerone, #containertwo, #itemonetwo {
     display: flex;
     align-items: stretch;
 }
@@ -55,4 +55,16 @@ body {
     text-align: center;
     font-size: 0%;
     background-color: black;
+}
+
+#myChart {
+    width: 90%;
+    height: 90%;
+}
+
+#containerthree {
+    border: 2px solid #000000;
+    margin: 5%;
+    width: 90%;
+    text-align: center;
 }
