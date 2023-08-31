@@ -72,6 +72,7 @@ body {
 #graphinput {
     width: 90%;
     height: 40px;
+    font-size: larger;
 }
 
 #graphinputsubmit {
