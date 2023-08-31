@@ -68,3 +68,15 @@ body {
     width: 90%;
     text-align: center;
 }
+
+#graphinput {
+    width: 90%;
+    height: 40px;
+}
+
+#graphinputsubmit {
+    width: 30%;
+    height: 40px;
+    margin: 5px;
+
+}

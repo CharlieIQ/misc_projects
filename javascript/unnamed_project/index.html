@@ -62,40 +62,49 @@
     <div id="containerthree">
         <h1>Graph test</h1>
             <canvas id="myChart"></canvas>
+
+            <input type="text" id="graphinput" placeholder="Enter equation here: "><br>
+            <button type="submit" id="graphinputsubmit">Graph</button>
             <!-- For the grapth -->
             <script>
+                const graphinputsubmit = document.getElementById("graphinputsubmit");
+                
                 const xValues = [];
                 const yValues = [];
-                equation = "Math.sin(x)"
-                generateData(`${equation}`, -10, 10, 0.5);
 
-                new Chart("myChart", {
-                type: "line",
-                data: {
-                    labels: xValues,
-                    datasets: [{
-                        fill: false,
-                        pointRadius: 2,
-                        borderColor: "rgba(0,0,255,0.5)",
-                        data: yValues
-                    }]
-                },    
-                options: {
-                    legend: {display: false},
-                    title: {
-                        display: true,
-                        text: `y = ${equation}`,
-                        fontSize: 16
+                graphinputsubmit.addEventListener('click', function(e){
+                    equation = document.getElementById('graphinput').value;
+                    generateData(`${equation}`, -10, 10, 0.5);
+
+                    new Chart("myChart", {
+                    type: "line",
+                    data: {
+                        labels: xValues,
+                        datasets: [{
+                            fill: false,
+                            pointRadius: 2,
+                            borderColor: "rgba(0,0,255,0.5)",
+                            data: yValues
+                        }]
+                    },    
+                    options: {
+                        legend: {display: false},
+                        title: {
+                            display: true,
+                            text: `y = ${equation}`,
+                            fontSize: 16
+                        }
                     }
-                }
+                    });
+                    function generateData(value, i1, i2, step = 1) {
+                        for (let x = i1; x <= i2; x += step) {
+                            yValues.push(eval(value));
+                            xValues.push(x);
+                        }
+                    }
+
                 });
-                function generateData(value, i1, i2, step = 1) {
-                    for (let x = i1; x <= i2; x += step) {
-                        yValues.push(eval(value));
-                        xValues.push(x);
-                    }
-                }
-
+                    
             </script>
     </div>
     <script src="script.js"></script>
