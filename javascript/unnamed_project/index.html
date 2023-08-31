@@ -66,33 +66,34 @@
             <script>
                 const xValues = [];
                 const yValues = [];
-                generateData(`Math.sin(x)`, -10, 10, 0.1);
+                equation = "Math.sin(x)"
+                generateData(`${equation}`, -10, 10, 0.5);
 
                 new Chart("myChart", {
                 type: "line",
                 data: {
                     labels: xValues,
                     datasets: [{
-                    fill: false,
-                    pointRadius: 2,
-                    borderColor: "rgba(0,0,255,0.5)",
-                    data: yValues
+                        fill: false,
+                        pointRadius: 2,
+                        borderColor: "rgba(0,0,255,0.5)",
+                        data: yValues
                     }]
                 },    
                 options: {
                     legend: {display: false},
                     title: {
-                    display: true,
-                    text: "y = cos(x)",
-                    fontSize: 16
+                        display: true,
+                        text: `y = ${equation}`,
+                        fontSize: 16
                     }
                 }
                 });
                 function generateData(value, i1, i2, step = 1) {
-                for (let x = i1; x <= i2; x += step) {
-                    yValues.push(eval(value));
-                    xValues.push(x);
-                }
+                    for (let x = i1; x <= i2; x += step) {
+                        yValues.push(eval(value));
+                        xValues.push(x);
+                    }
                 }
 
             </script>
