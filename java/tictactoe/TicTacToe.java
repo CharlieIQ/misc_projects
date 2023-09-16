@@ -11,6 +11,8 @@ public class TicTacToe {
         String character;
         // Generates board
         String[][] gameBoard = generateBoard(5);
+        // Initializes win check
+        boolean didWin = false;
         // Prints empty board
 
         // Starts turn at 0
@@ -24,16 +26,17 @@ public class TicTacToe {
             else{
                 character = "O";
             }
-            // Prints board
-            printBoard(gameBoard);
             // Prints new turn message
             newTurn(turn);
+            // Prints board
+            printBoard(gameBoard);
             // Gets inputted position
             position = kb.nextInt();
             // Updates game board to position
             gameBoard = addXorO(gameBoard, position, character);
 
-            if (checkForWin(gameBoard)){
+            didWin = checkForWin(gameBoard);
+            if (didWin){
                 System.out.println("Game over");
                 break;
             }
@@ -71,6 +74,7 @@ public class TicTacToe {
         return gameBoard;
     }
     public static void printBoard(String[][] gameBoard){
+        // Will print the board out
         for (int i = 0; i < gameBoard.length; i++){
             for (int j = 0; j < gameBoard.length; j++){
                 System.out.printf("%2s ", gameBoard[i][j]);
@@ -81,7 +85,7 @@ public class TicTacToe {
 
     public static String[][] addXorO(String[][] board, int position, String character){
         String[][] updatedBoard = board;
-
+        // All the positions to update X and O
         if (position == 1){
             updatedBoard[0][0] = character;
         }
@@ -112,15 +116,13 @@ public class TicTacToe {
         else{
             System.out.println("Character not valid");
         }
-
-
         return updatedBoard;
 
     }
 
     public static void newTurn(int turn){
         System.out.println("Turn number " + turn);
-
+        // Will print player prompt based on if turn number is even or odd
         if (turn % 2 == 0){
             System.out.println("Player 2 please put an X position value: ");
         }
@@ -131,7 +133,29 @@ public class TicTacToe {
 
     public static boolean checkForWin(String[][] board){
         boolean didWin = false;
-        if (((board[0][0] == "X") && (board[0][2] == "X") && (board[0][4] == "X")) || ((board[0][0] == "X") && (board[0][2] == "X") && (board[0][4] == "O"))){
+        // Here's all of the winning lines (I know it's ugly)
+        if (((board[0][0].equals("X")) && (board[0][2].equals("X")) && (board[0][4].equals("X"))) || ((board[0][0].equals("O")) && (board[0][2].equals("O")) && (board[0][4].equals("O")))){
+            didWin = true;
+        }
+        else if (((board[2][0].equals("X")) && (board[2][2].equals("X")) && (board[2][4].equals("X"))) || ((board[2][0].equals("O")) && (board[2][2].equals("O")) && (board[2][4].equals("O")))){
+            didWin = true;
+        }
+        else if (((board[4][0].equals("X")) && (board[4][2].equals("X")) && (board[4][4].equals("X"))) || ((board[4][0].equals("O")) && (board[4][2].equals("O")) && (board[4][4].equals("O")))){
+            didWin = true;
+        }
+        else if (((board[0][0].equals("X")) && (board[2][0].equals("X")) && (board[4][0].equals("X"))) || ((board[0][0].equals("O")) && (board[2][0].equals("O")) && (board[4][0].equals("O")))){
+            didWin = true;
+        }
+        else if (((board[0][2].equals("X")) && (board[2][2].equals("X")) && (board[4][2].equals("X"))) || ((board[0][2].equals("O")) && (board[2][2].equals("O")) && (board[4][2].equals("O")))){
+            didWin = true;
+        }
+        else if (((board[0][4].equals("X")) && (board[2][4].equals("X")) && (board[4][4].equals("X"))) || ((board[0][4].equals("O")) && (board[2][4].equals("O")) && (board[4][4].equals("O")))){
+            didWin = true;
+        }
+        else if (((board[0][0].equals("X")) && (board[2][2].equals("X")) && (board[4][4].equals("X"))) || ((board[0][0].equals("O")) && (board[2][2].equals("O")) && (board[4][4].equals("O")))){
+            didWin = true;
+        }
+        else if (((board[4][0].equals("X")) && (board[2][2].equals("X")) && (board[0][4].equals("X"))) || ((board[4][0].equals("O")) && (board[2][2].equals("O")) && (board[0][4].equals("O")))){
             didWin = true;
         }
         return didWin;
