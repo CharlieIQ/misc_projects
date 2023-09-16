@@ -1,6 +1,13 @@
+// I'm going to style this in accordance with Dal guidelines
+// I also wrote this without referencing any other code
 import java.util.Scanner;
 
-
+/**
+ * This class will run a game of tic-tac-toe
+ * All the methods will work together to make the game functional
+ *
+ * @author Charlie McLaughlin - B00954841
+ */
 public class TicTacToe {
     public static void main(String[] args){
         // Starts scanner
@@ -12,9 +19,7 @@ public class TicTacToe {
         // Generates board
         String[][] gameBoard = generateBoard(5);
         // Initializes win check
-        boolean didWin = false;
-        // Prints empty board
-
+        boolean didWin;
         // Starts turn at 0
         int turn = 1 ;
         // Plays for max of 9 turns
@@ -34,18 +39,34 @@ public class TicTacToe {
             position = kb.nextInt();
             // Updates game board to position
             gameBoard = addXorO(gameBoard, position, character);
-
+            // Checks if game has been won or not
             didWin = checkForWin(gameBoard);
             if (didWin){
-                System.out.println("Game over");
+                // Prints winning player based on turn that is won on
+                if (turn % 2 == 0){
+                    System.out.println("Player 2 wins");
+                }
+                else{
+                    System.out.println("Player 1 wins");
+                }
+                printBoard(gameBoard);
                 break;
+
             }
 
             turn++;
 
         }
+
+
     }
 
+    /**
+     * Method used to generate the board.
+     * The board will be 5x5 unless specified otherwise.
+     * @param dimension the size of the board (default 5 by 5)
+     * @return gameBoard the generated game board
+     */
     public static String[][] generateBoard(int dimension){
         String[][] gameBoard = new String[dimension][dimension];
 
@@ -73,6 +94,12 @@ public class TicTacToe {
         }
         return gameBoard;
     }
+
+    /**
+     * Method used to print the board.
+     * Board items will be split by 2 spaces.
+     * @param gameBoard the size of the board (default 5 by 5)
+     */
     public static void printBoard(String[][] gameBoard){
         // Will print the board out
         for (int i = 0; i < gameBoard.length; i++){
@@ -82,44 +109,55 @@ public class TicTacToe {
             System.out.println();
         }
     }
-
+    /**
+     * Method used to update the board.
+     * Based on position inputted, position on the 2d board array will be updated to X or O
+     * @param board the current state of the board
+     * @param position the position that the X or O will go
+     * @param character Either X or O based on what turn it is
+     * @return board the updated game board
+     */
     public static String[][] addXorO(String[][] board, int position, String character){
-        String[][] updatedBoard = board;
         // All the positions to update X and O
         if (position == 1){
-            updatedBoard[0][0] = character;
+            board[0][0] = character;
         }
         else if (position == 2){
-            updatedBoard[0][2] = character;
+            board[0][2] = character;
         }
         else if (position == 3){
-            updatedBoard[0][4] = character;
+            board[0][4] = character;
         }
         else if (position == 4){
-            updatedBoard[2][0] = character;
+            board[2][0] = character;
         }
         else if (position == 5){
-            updatedBoard[2][2] = character;
+            board[2][2] = character;
         }
         else if (position == 6){
-            updatedBoard[2][4] = character;
+            board[2][4] = character;
         }
         else if (position == 7){
-            updatedBoard[4][0] = character;
+            board[4][0] = character;
         }
         else if (position == 8){
-            updatedBoard[4][2] = character;
+            board[4][2] = character;
         }
         else if (position == 9){
-            updatedBoard[4][4] = character;
+            board[4][4] = character;
         }
         else{
             System.out.println("Character not valid");
         }
-        return updatedBoard;
+        return board;
 
     }
 
+    /**
+     * Method used to print the current turn.
+     * Based on if turn is even or odd, Player 1 or 2 will be prompted to play.
+     * @param turn the current turn of the game
+     */
     public static void newTurn(int turn){
         System.out.println("Turn number " + turn);
         // Will print player prompt based on if turn number is even or odd
@@ -131,9 +169,15 @@ public class TicTacToe {
         }
     }
 
+    /**
+     * Method used to check the win status of the game
+     * @param board the current game board
+     * @return didWin if a winning line exists method wil be true otherwise false
+     */
     public static boolean checkForWin(String[][] board){
         boolean didWin = false;
-        // Here's all of the winning lines (I know it's ugly)
+        // Here's all the winning lines
+        // Rows
         if (((board[0][0].equals("X")) && (board[0][2].equals("X")) && (board[0][4].equals("X"))) || ((board[0][0].equals("O")) && (board[0][2].equals("O")) && (board[0][4].equals("O")))){
             didWin = true;
         }
@@ -143,6 +187,7 @@ public class TicTacToe {
         else if (((board[4][0].equals("X")) && (board[4][2].equals("X")) && (board[4][4].equals("X"))) || ((board[4][0].equals("O")) && (board[4][2].equals("O")) && (board[4][4].equals("O")))){
             didWin = true;
         }
+        // Columns
         else if (((board[0][0].equals("X")) && (board[2][0].equals("X")) && (board[4][0].equals("X"))) || ((board[0][0].equals("O")) && (board[2][0].equals("O")) && (board[4][0].equals("O")))){
             didWin = true;
         }
@@ -152,6 +197,7 @@ public class TicTacToe {
         else if (((board[0][4].equals("X")) && (board[2][4].equals("X")) && (board[4][4].equals("X"))) || ((board[0][4].equals("O")) && (board[2][4].equals("O")) && (board[4][4].equals("O")))){
             didWin = true;
         }
+        // Diagonals
         else if (((board[0][0].equals("X")) && (board[2][2].equals("X")) && (board[4][4].equals("X"))) || ((board[0][0].equals("O")) && (board[2][2].equals("O")) && (board[4][4].equals("O")))){
             didWin = true;
         }
@@ -161,4 +207,3 @@ public class TicTacToe {
         return didWin;
     }
 }
-
