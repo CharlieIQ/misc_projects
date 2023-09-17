@@ -119,35 +119,35 @@ public class TicTacToe {
      */
     public static String[][] addXorO(String[][] board, int position, String character){
         // All the positions to update X and O
-        if (position == 1){
+        if ((position == 1) && (board[0][0].equals(" "))){
             board[0][0] = character;
         }
-        else if (position == 2){
+        else if (position == 2 && (board[0][2].equals(" "))){
             board[0][2] = character;
         }
-        else if (position == 3){
+        else if (position == 3 && (board[0][4].equals(" "))){
             board[0][4] = character;
         }
-        else if (position == 4){
+        else if (position == 4 && (board[2][0].equals(" "))){
             board[2][0] = character;
         }
-        else if (position == 5){
+        else if (position == 5 && (board[2][2].equals(" "))){
             board[2][2] = character;
         }
-        else if (position == 6){
+        else if (position == 6 && (board[2][4].equals(" "))){
             board[2][4] = character;
         }
-        else if (position == 7){
+        else if (position == 7 && (board[4][0].equals(" "))){
             board[4][0] = character;
         }
-        else if (position == 8){
+        else if (position == 8 && (board[4][2].equals(" "))){
             board[4][2] = character;
         }
-        else if (position == 9){
+        else if (position == 9 && (board[4][4].equals(" "))){
             board[4][4] = character;
         }
         else{
-            System.out.println("Character not valid");
+            System.out.println("Position already taken!");
         }
         return board;
 
