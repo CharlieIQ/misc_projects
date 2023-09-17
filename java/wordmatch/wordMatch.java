@@ -22,9 +22,11 @@ public class wordMatch {
         // Loop that will iterate over turns
         while(turn > 0){
             // Prints what turn it is
-            System.out.println(turn + " turns left! \nPlease enter a word:");
+            System.out.println(turn + " turns left! \nPlease enter a "+ word.length() + " letter word:");
             // User input:
             guess = kb.next();
+            // Checks and prints if character exists
+            doesLetterExist(guess, charsInWord);
             // Updates guess visualiser
             matchStorage = checkUserGuess(guess, charsInWord);
             // Checks if user won
@@ -68,6 +70,8 @@ public class wordMatch {
                 visual[i] = temporaryArray[(indicesOfMatches[i]- 1)];
             }
         }
+        // Filler
+        System.out.println("=======================================");
         // Print Visual
         String filler = "*";
         for (int i = 0; i < userGuess.length(); i++){
@@ -76,11 +80,27 @@ public class wordMatch {
             }
             System.out.print(visual[i] + " ");
         }
-        System.out.println();
+        // Filler
+        System.out.println("\n=======================================");
+
         // For matching values
         return indicesOfMatches;
     }
 
+    public static void doesLetterExist(String userGuess, Character[] charsInWord){
+        Character[] temporaryArray = new Character[userGuess.length()];
+        for (int i = 0; i < userGuess.length(); i++){
+            temporaryArray[i] = userGuess.charAt(i);
+        }
+
+        for (int i = 0; i < temporaryArray.length; i++){
+            for (int j  = 0; j < temporaryArray.length; j++){
+                if (temporaryArray[i].equals(charsInWord[j])){
+                    System.out.println("The character " + temporaryArray[i] + " exists in the mystery word!");
+                }
+            }
+        }
+    }
     public static boolean didWin(String userGuess, String word){
         boolean didUserWin = false;
         if (userGuess.equals(word)){
