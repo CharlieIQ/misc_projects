@@ -6,6 +6,14 @@ import java.util.Scanner;
  * This class will run a game of tic-tac-toe
  * All the methods will work together to make the game functional
  *
+ * The game is played in 9 turns, with the first player placing and O and the second placing X.
+ * The placement for Xs and Os are lined up like this:
+ *  1  |  2 |  3
+ *  _  _  _  _  _
+ *  4  |  5  | 6
+ *  _  _  _  _  _
+ *  7  |  8  | 9
+ * If a player tries to put an X or O in a taken position, then the player's turn will be skipped.
  * @author Charlie McLaughlin - B00954841
  */
 public class TicTacToe {
