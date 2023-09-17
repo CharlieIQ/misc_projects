@@ -11,5 +11,7 @@ My top projects demonstrate my programming knowledge:
 - Charlie Calculator (Ongoing Project)
 - Binary Tree (Made doing a Udemy course)
 - Guess My Number (Made doing a Udemy course)
+- Tic-Tac-Toe (Written in java)
+- GuessWord (Ongoing Project)
 
 *Made by Charlie McLaughlin All Rights Reserved*
