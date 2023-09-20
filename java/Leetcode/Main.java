@@ -11,42 +11,40 @@ public class Main {
         int numLength = numToString.length();
         // For if length is 1
         if (numLength == 1){
-            return isPalindrome = true;
+            return true;
         }
         // For length equal to 2
-        if (numLength == 2){
+        else if (numLength == 2){
             if (numToString.charAt(0) == numToString.charAt(1)){
-                return isPalindrome = true;
+                return true;
             }
         }
-        // If num is even
-        if (numLength % 2 == 0){
-            for (int i = 0; i < numLength/2 - 1; i++){
-                for (int j = numLength - 1; j > numLength/2; j--){
-                    if (numToString.charAt(i) == numToString.charAt(j)){
+        else{
+
+            // If word length is even
+            if (numLength % 2 == 0){
+                for (int i = 0; i < numLength/2; i++){
+                    if (numToString.charAt(i) == numToString.charAt((numLength - 1) - i)){
                         isPalindrome = true;
                     }
                     else{
-                        isPalindrome = false;
-                        return isPalindrome;
+                        return false;
+                    }
+                }
+            }
+            // If word length is odd
+            else {
+                for (int i = 0; i < (int)numLength/2; i++){
+                    if (numToString.charAt(i) == numToString.charAt((numLength - 1) - i)){
+                        isPalindrome = true;
+                    }
+                    else{
+                        return false;
                     }
                 }
             }
         }
-        // If num is odd
-        else {
-            for (int i = 0; i < (int)(numLength/2); i++){
-                for (int j = numLength - 1; j > (int)numLength/2; j--){
-                    if (numToString.charAt(i) == numToString.charAt(j)){
-                        isPalindrome = true;
-                    }
-                    else{
-                        isPalindrome = false;
-                        return isPalindrome;
-                    }
-                }
-            }
-        }
+
 
         return isPalindrome;
     }
