@@ -1,4 +1,4 @@
-public class Main {
+public class PalindromeCheck {
     // So close
     public static void main(String[] args){
         System.out.println(isPalindrome(123123));
