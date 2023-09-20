@@ -13,6 +13,7 @@ public class Main {
         if (numLength == 1){
             return isPalindrome = true;
         }
+        // For length equal to 2
         if (numLength == 2){
             if (numToString.charAt(0) == numToString.charAt(1)){
                 return isPalindrome = true;
@@ -27,12 +28,12 @@ public class Main {
                     }
                     else{
                         isPalindrome = false;
-                        break;
+                        return isPalindrome;
                     }
                 }
             }
         }
-        // If word length is odd
+        // If num is odd
         else {
             for (int i = 0; i < (int)(numLength/2); i++){
                 for (int j = numLength - 1; j > (int)numLength/2; j--){
@@ -41,7 +42,7 @@ public class Main {
                     }
                     else{
                         isPalindrome = false;
-                        break;
+                        return isPalindrome;
                     }
                 }
             }
