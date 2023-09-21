@@ -9,7 +9,7 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args){
         // Here's the mystery word (has to be length board size - 1)
-        String mysteryWord = "hoes";
+        String mysteryWord = "hoeshoess";
         // Here's the board
         int boardSize = 10;
         Character[][] gameBoard = new Character[boardSize][boardSize];
@@ -24,7 +24,7 @@ public class Main {
     public static Character getRandomLetter(){
         Character[] letters = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
             'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-        return letters[generateRandomNum(letters.length -1)];
+        return letters[generateRandomNum(letters.length)];
     }
 
     public static int generateRandomNum(int range){
@@ -55,14 +55,15 @@ public class Main {
         // for board size
         int boardSize = board.length;
         // For random position
-        int xPos = generateRandomNum(boardSize - 1);
-        int yPos = generateRandomNum(boardSize - 1);
+        int xPos = generateRandomNum(boardSize);
+        int yPos = generateRandomNum(boardSize);
         // Down or up random (0 right) (1 down) (2 left) (3 up)
         int orientation = generateRandomNum(4);
         System.out.println(orientation);
         // Check for boundary
-        xPos = checkForBoundary(wordLength, boardSize, xPos);
-        yPos = checkForBoundary(wordLength, boardSize, yPos);
+        xPos = checkForBoundary(wordLength, boardSize, xPos, orientation);
+        yPos = checkForBoundary(wordLength, boardSize, yPos, orientation);
+        System.out.println(xPos + " " + yPos);
         // Split the word (into uppercase)
         Character[] splitUpWord = splitWord(word.toUpperCase());
 
@@ -115,19 +116,29 @@ public class Main {
     }
 
     // going to cause problems probably
-    public static int checkForBoundary(int wordLength, int boardSize, int position){
-
-        if (wordLength < boardSize){
-            while (wordLength + position > boardSize){
+    public static int checkForBoundary(int wordLength, int boardSize, int position, int orientation){
+        if (orientation == 1){
+            while (wordLength + position > boardSize - 1){
                 position--;
             }
         }
-        else{
+        else if(orientation == 3){
             // Check for less than boundary
-            while (wordLength - position < 0){
+            while (position - wordLength <= 0){
                 position++;
             }
         }
+        else if (orientation == 0){
+            while (wordLength + position > boardSize - 1){
+                position--;
+            }
+        }
+        else if(orientation == 2){
+            while (position - wordLength <= 0){
+                position++;
+            }
+        }
+
 
         return position;
     }
