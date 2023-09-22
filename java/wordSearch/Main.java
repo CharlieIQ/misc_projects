@@ -9,9 +9,9 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args){
         // Here's the mystery word (has to be length board size - 1)
-        String mysteryWord = "hoeshoess";
+        String mysteryWord = "hoes";
         // Here's the board
-        int boardSize = 10;
+        int boardSize = 20;
         Character[][] gameBoard = new Character[boardSize][boardSize];
         // Generate Board
         gameBoard = generateBoard(gameBoard, boardSize);
@@ -101,7 +101,7 @@ public class Main {
 
             }
         }
-        //cleanBoard(board, splitUpWord);
+        cleanBoard(board, splitUpWord);
         return board;
     }
 
