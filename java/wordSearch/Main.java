@@ -9,9 +9,9 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args){
         // Here's the mystery word (has to be length board size - 1)
-        String mysteryWord = "hoes";
+        String mysteryWord = "benevolent";
         // Here's the board
-        int boardSize = 20;
+        int boardSize = 15;
         Character[][] gameBoard = new Character[boardSize][boardSize];
         // Generate Board
         gameBoard = generateBoard(gameBoard, boardSize);
@@ -57,8 +57,8 @@ public class Main {
         // For random position
         int xPos = generateRandomNum(boardSize);
         int yPos = generateRandomNum(boardSize);
-        // Down or up random (0 right) (1 down) (2 left) (3 up)
-        int orientation = generateRandomNum(4);
+        // Down or up random (0 right) (1 down) (2 left) (3 up) (4
+        int orientation = generateRandomNum(8);
         System.out.println(orientation);
         // Check for boundary
         xPos = checkForBoundary(wordLength, boardSize, xPos, orientation);
@@ -97,6 +97,31 @@ public class Main {
                             board[x - i][y] = splitUpWord[i];
                         }
                     }
+                    // up left
+                    else if (orientation == 4){
+                        for (int i = 0; i < splitUpWord.length; i++){
+                            board[x - i][y - i] = splitUpWord[i];
+                        }
+                    }
+                    // up right
+                    else if (orientation == 5){
+                        for (int i = 0; i < splitUpWord.length; i++){
+                            board[x - i][y + i] = splitUpWord[i];
+                        }
+                    }
+                    // bottom left
+                    else if (orientation == 6){
+                        for (int i = 0; i < splitUpWord.length; i++){
+                            board[x + i][y - i] = splitUpWord[i];
+                        }
+                    }
+                    // bottom right
+                    else if (orientation == 7){
+                        for (int i = 0; i < splitUpWord.length; i++){
+                            board[x + i][y + i] = splitUpWord[i];
+                        }
+                    }
+
                 }
 
             }
@@ -117,28 +142,27 @@ public class Main {
 
     // going to cause problems probably
     public static int checkForBoundary(int wordLength, int boardSize, int position, int orientation){
-        if (orientation == 1){
+        if (orientation == 1 || orientation == 7){
             while (wordLength + position > boardSize - 1){
                 position--;
             }
         }
-        else if(orientation == 3){
+        else if(orientation == 3 || orientation == 4){
             // Check for less than boundary
             while (position - wordLength <= 0){
                 position++;
             }
         }
-        else if (orientation == 0){
+        else if (orientation == 0 || orientation == 6){
             while (wordLength + position > boardSize - 1){
                 position--;
             }
         }
-        else if(orientation == 2){
+        else if(orientation == 2 || orientation == 5){
             while (position - wordLength <= 0){
                 position++;
             }
         }
-
 
         return position;
     }
