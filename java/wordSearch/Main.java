@@ -9,7 +9,7 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args){
         // Here's the mystery word (has to be length board size - 1)
-        String mysteryWord = "nuts";
+        String mysteryWord = "testies";
         // Here's the board
         int boardSize = 15;
         Character[][] gameBoard = new Character[boardSize][boardSize];
@@ -57,11 +57,14 @@ public class Main {
         // For random position
         int xPos = generateRandomNum(boardSize);
         int yPos = generateRandomNum(boardSize);
+
         // Down or up random (0 right) (1 down) (2 left) (3 up) (4
         int orientation = generateRandomNum(8);
+
         // Check for boundary
         xPos = checkForBoundary(wordLength, boardSize, xPos, orientation);
         yPos = checkForBoundary(wordLength, boardSize, yPos, orientation);
+
         // Split the word (into uppercase)
         Character[] splitUpWord = splitWord(word.toUpperCase());
 
@@ -177,11 +180,11 @@ public class Main {
         }
         // up right
         else if (orientation == 5){
-            while (position - wordLength <= 0){
-                position++;
-            }
             while (wordLength + position > boardSize - 1){
                 position--;
+            }
+            while (position - wordLength <= 0){
+                position++;
             }
         }
         // down left
@@ -192,6 +195,8 @@ public class Main {
             while (wordLength + position > boardSize - 1){
                 position--;
             }
+
+
         }
         // down right
         else if (orientation == 7){
