@@ -9,7 +9,7 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args){
         // Here's the mystery word (has to be length board size - 1)
-        String mysteryWord = "benevolent";
+        String mysteryWord = "nuts";
         // Here's the board
         int boardSize = 15;
         Character[][] gameBoard = new Character[boardSize][boardSize];
@@ -59,11 +59,9 @@ public class Main {
         int yPos = generateRandomNum(boardSize);
         // Down or up random (0 right) (1 down) (2 left) (3 up) (4
         int orientation = generateRandomNum(8);
-        System.out.println(orientation);
         // Check for boundary
         xPos = checkForBoundary(wordLength, boardSize, xPos, orientation);
         yPos = checkForBoundary(wordLength, boardSize, yPos, orientation);
-        System.out.println(xPos + " " + yPos);
         // Split the word (into uppercase)
         Character[] splitUpWord = splitWord(word.toUpperCase());
 
@@ -142,28 +140,68 @@ public class Main {
 
     // going to cause problems probably
     public static int checkForBoundary(int wordLength, int boardSize, int position, int orientation){
-        if (orientation == 1 || orientation == 7){
+        // For right
+        if (orientation == 0){
             while (wordLength + position > boardSize - 1){
                 position--;
             }
         }
-        else if(orientation == 3 || orientation == 4){
+        // For down
+        else if (orientation == 1){
+            while (wordLength + position > boardSize - 1){
+                position--;
+            }
+        }
+        // For left
+        else if(orientation == 2){
+            while (position - wordLength <= 0){
+                position++;
+            }
+        }
+        // for up
+        else if(orientation == 3){
             // Check for less than boundary
             while (position - wordLength <= 0){
                 position++;
             }
         }
-        else if (orientation == 0 || orientation == 6){
+        // up left
+        else if (orientation == 4){
+            while (position - wordLength <= 0){
+                position++;
+            }
+            while (wordLength + position > boardSize - 1){
+                position--;
+            }
+
+        }
+        // up right
+        else if (orientation == 5){
+            while (position - wordLength <= 0){
+                position++;
+            }
             while (wordLength + position > boardSize - 1){
                 position--;
             }
         }
-        else if(orientation == 2 || orientation == 5){
+        // down left
+        else if (orientation == 6){
             while (position - wordLength <= 0){
                 position++;
             }
+            while (wordLength + position > boardSize - 1){
+                position--;
+            }
         }
-
+        // down right
+        else if (orientation == 7){
+            while (position - wordLength <= 0){
+                position++;
+            }
+            while (wordLength + position > boardSize - 1){
+                position--;
+            }
+        }
         return position;
     }
 
