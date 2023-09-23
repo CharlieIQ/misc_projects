@@ -1,0 +1,71 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#mainTitle {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    text-align: center;
+    font-size: 60px;
+}
+
+.currentAmount {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    text-align: center;
+    font-size: 50px;
+}
+
+#mainSubmitForm {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    width: 95%;
+    text-align: center;
+    border: 2px solid #000000;
+
+}
+
+#formContainer {
+    /* For alignment */
+    display: flex;
+    align-items: stretch;
+    text-align: center;
+
+}
+
+#splitOne,
+#splitTwo {
+
+    width: 45%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    height: 400px;
+    text-align: center;
+}
+
+label,
+input {
+    margin: 15px;
+}
+
+label {
+
+    font-size: 28px;
+}
+
+#submitButton {
+    margin: 10px;
+
+}
+
+input {
+    width: 160px;
+}
+
+#submitButton {
+    font-size: xx-large;
+    height: 40px;
+    width: 120px;
+}

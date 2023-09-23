@@ -13,38 +13,43 @@
 <body>
     <h1 id="mainTitle">50/50</h1>
     <!-- For the winnings amount -->
-    <h2 id="currentAmountLabel">Current amount to be won:</h2>
-    <h2 id="currentAmountActual"></h2>
+    <h2 id="currentAmountLabel" class="currentAmount">Current amount to be won:</h2>
+    <h2 id="currentAmountActual" class="currentAmount"></h2>
     <!-- For the form -->
     <form id="mainSubmitForm">
-        <!-- First and last names -->
-        <label for="fname">First name:</label><br>
-        <input type="text" id="fname" name="fname"><br>
-        <label for="lname">Last name:</label><br>
-        <input type="text" id="lname" name="lname">
-        <!-- Contact -->
-        <label for="email">Enter email:</label><br>
-        <input type="text" id="email" name="email">
-        <!-- Amount to bet -->
-        <label for="amountwager">Enter wager amount: </label><br>
-        <input type="number" id="amountwager" name="amountwager"><br>
-        <!-- Location info -->
-        <label for="country">Enter country: </label><br>
-        <input type="text" id="country" name="country">
-        <label for="postalcode">Enter postal/ZIP code:</label><br>
-        <input type="text" id="postalcode" name="postalcode">
-        <label for="address">Enter address:</label><br>
-        <input type="text" id="address" name="address">
-        <!-- Payment info -->
-        <label for="cardnumber">Enter card number:</label><br>
-        <input type="text" id="cardnumber" name="addcardnumberress">
-        <label for="expirydate">Enter expiry date:</label><br>
-        <input type="text" id="expirydate" name="expirydate">
-        <label for="securitycode">Enter security code:</label><br>
-        <input type="text" id="securitycode" name="securitycode">
-
+        <div id="formContainer">
+            <div id="splitOne">
+                <!-- First and last names -->
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname"><br>
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname"><br>
+                <!-- Contact -->
+                <label for="email">Enter email:</label><br>
+                <input type="text" id="email" name="email"><br>
+                <!-- Amount to bet -->
+                <label for="amountwager">Enter wager amount: </label><br>
+                <input type="number" id="amountwager" name="amountwager"><br>
+                <!-- Location info -->
+                <label for="country">Enter country: </label><br>
+                <input type="text" id="country" name="country"><br>
+            </div>
+            <div id="splitTwo">
+                <label for="postalcode">Enter postal/ZIP code:</label><br>
+                <input type="text" id="postalcode" name="postalcode"><br>
+                <label for="address">Enter address:</label><br>
+                <input type="text" id="address" name="address"><br>
+                <!-- Payment info -->
+                <label for="cardnumber">Enter card number:</label><br>
+                <input type="text" id="cardnumber" name="addcardnumberress"><br>
+                <label for="expirydate">Enter expiry date:</label><br>
+                <input type="text" id="expirydate" name="expirydate"><br>
+                <label for="securitycode">Enter security code:</label><br>
+                <input type="text" id="securitycode" name="securitycode"><br>
+            </div>
+        </div>
         <!-- Submit -->
-        <button type="submit">Submit</button>
+        <button type="submit" id="submitButton">Submit</button>
     </form>
 </body>
 
