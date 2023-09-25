@@ -20,17 +20,25 @@ public class FindTheDifference {
         for (int i = 0; i < originalLen; i++){
             newString[i] = t.charAt(i);
         }
-        // For deletion
         int indexOfDeletedElement = 0;
-        for (int i = newLen; i > 0; i--){
-            for (int j = i; j < newString.length; j++){
-                if (originalString[i].equals(newString[j])){
-                    newString[j] = null;
+        // For deletion
+        for (int i = newLen - 1; i >= 1; i--){
+            for (int j = 0; j < originalLen; j++){
+                if (originalString[j].equals(newString[i])) {
+                    newString[i] = null;
                     indexOfDeletedElement = i;
+                    break;
                 }
             }
+
             newString = shortenArray(orderArray(originalString, indexOfDeletedElement));
         }
+
+
+
+
+
+
 
         return newString[0];
     }
