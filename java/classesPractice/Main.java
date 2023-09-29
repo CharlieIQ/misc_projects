@@ -1,7 +1,12 @@
 public class Main {
     public static void main(String[] args){
-        Second myCar = new Second();   // Create a myCar object
-        myCar.fullThrottle();      // Call the fullThrottle() method
-        myCar.speed(200);
+        ATM account1 = new ATM();
+        ATM account2 = new ATM(5800);
+
+        account1.addMoney(46000);
+        account1.printBalance();
+
+        account2.withDrawlMoney(3000);
+        account2.printBalance();
     }
 }
