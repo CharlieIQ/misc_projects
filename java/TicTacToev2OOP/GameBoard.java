@@ -33,9 +33,54 @@ public class GameBoard {
 
         for (int i = 0; i < board.length; i++){
             for (int j = 0; j < board.length; j++){
-                System.out.printf("%2s ", board[i][j]);
+                System.out.printf("%1s ", board[i][j]);
             }
             System.out.println();
         }
+    }
+
+    public String[][] addXorO(int position, int turn){
+        // O if turn is odd
+        String gamePiece = "O";
+        // X if turn is even
+        if (turn % 2 == 0){
+            gamePiece = "X";
+        }
+
+        switch (position){
+            case 1:
+                board[0][0] = gamePiece;
+                return board;
+            case 2:
+                board[0][2] = gamePiece;
+                return board;
+
+            case 3:
+                board[0][4] = gamePiece;
+                return board;
+
+            case 4:
+                board[2][0] = gamePiece;
+                return board;
+            case 5:
+                board[2][2] = gamePiece;
+                return board;
+
+            case 6:
+                board[2][4] = gamePiece;
+                return board;
+
+            case 7:
+                board[4][0] = gamePiece;
+                return board;
+            case 8:
+                board[4][2] = gamePiece;
+                return board;
+
+            case 9:
+                board[4][4] = gamePiece;
+                return board;
+        }
+        return board;
     }
 }
