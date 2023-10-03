@@ -34,12 +34,6 @@ public class FindTheDifference {
             newString = shortenArray(orderArray(originalString, indexOfDeletedElement));
         }
 
-
-
-
-
-
-
         return newString[0];
     }
 
