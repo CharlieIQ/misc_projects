@@ -9,7 +9,7 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args){
         // Here's the mystery word (has to be length board size - 1)
-        String mysteryWord = "testies";
+        String mysteryWord = "yyy";
         // Here's the board
         int boardSize = 15;
         Character[][] gameBoard = new Character[boardSize][boardSize];

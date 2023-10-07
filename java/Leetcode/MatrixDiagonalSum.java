@@ -9,6 +9,7 @@ public class MatrixDiagonalSum {
         System.out.println(diagonalSum(mat3)); // 5
     }
 
+
     public static int diagonalSum(int[][] mat) {
         int sum = 0;
         int length = mat.length;
@@ -36,7 +37,7 @@ public class MatrixDiagonalSum {
         }
         // Odd
         else{
-            for (int i = 0; i < (length/2) - 1; i++){
+            for (int i = 0; i <= (length/2) - 1; i++){
                 for (int j = 0; j < length; j++){
                     if (j == (j + i) || j == (i - j)){
                         sum += mat[i][j];
@@ -44,9 +45,9 @@ public class MatrixDiagonalSum {
                 }
             }
             sum += mat[(length/2) - 1][(length/2) - 1];
-            for (int i = length - 1; i > (length/2) - 1; i--){
+            for (int i = length - 1; i >= (length/2) - 1; i--){
                 for (int j = 0; j < length; j++){
-                    if (j == (i - j) || j == (i - 1)){
+                    if (j == (i + j) || j == (i - j)){
                         sum += mat[i][j];
                     }
                 }

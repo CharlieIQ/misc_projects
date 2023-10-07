@@ -6,7 +6,7 @@ public class wordMatch {
         // Initialize scanner
         Scanner kb = new Scanner(System.in);
         // This is the word that'll be used
-        String word = "orbit";
+        String word = "balls";
         // Initializes user guess
         String guess;
         // For guess visualiser
