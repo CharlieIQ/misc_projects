@@ -2,11 +2,7 @@ import pygame
 import Player
 import Opponent
  
-# Define some colors
 BLACK = (0, 0, 0)
-WHITE = (255, 255, 255)
-GREEN = (0, 255, 0)
-RED = (255, 0, 0)
 
 pygame.init()
  
@@ -23,7 +19,7 @@ player = Player.Player(screen_x/2, screen_y/2)
 # Create list of opponents
 list_of_opponents = []
 # Create enemies
-for i in range(0, 10):
+for i in range(0, 100):
     opp = Opponent.Enemy(i, screen_x, screen_y)
     list_of_opponents.append(opp)
 # Loop until the user clicks the close button.
