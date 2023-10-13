@@ -26,9 +26,9 @@ player = Player.Player(500, 500)
 # Used to manage how fast the screen updates
 clock = pygame.time.Clock()
  
-# -------- Main Program Loop -----------
+# Main Program Loop 
 while not done:
-    # --- Main event loop
+    # Main event loop
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             done = True
@@ -40,7 +40,7 @@ while not done:
     # Set Screen to Cyan Sky
     screen.fill(background_default)
  
-    # --- Drawing code should go here
+    # Drawing code should go here
     # Generate Level
     Level.generateLevel(screen)
 
