@@ -32,4 +32,7 @@ class Enemy:
         self.x += self.xstep
 
         self.y += self.ystep
+    
+    def get_current_position(self):
+        return (self.x, self.y)
         

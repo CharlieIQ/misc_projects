@@ -20,3 +20,6 @@ class Player:
             self.y -= 10
         if keys[pygame.K_DOWN]:
             self.y += 10
+
+    def get_player_current_position(self):
+        return (self.x, self.y)

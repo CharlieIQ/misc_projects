@@ -18,10 +18,12 @@ pygame.display.set_caption("SizeIO")
 player = Player.Player(screen_x/2, screen_y/2)
 # Create list of opponents
 list_of_opponents = []
+list_of_opponents_pos = []
 # Create enemies
-for i in range(0, 100):
+for i in range(0, 20):
     opp = Opponent.Enemy(i, screen_x, screen_y)
     list_of_opponents.append(opp)
+    list_of_opponents_pos.append((0, 0))
 # Loop until the user clicks the close button.
 done = False
  
@@ -45,11 +47,12 @@ while not done:
 
     for i in range(0, len(list_of_opponents)):
         list_of_opponents[i].move()
+        list_of_opponents_pos[i] = list_of_opponents[i].get_current_position()
     
     # If you want a background image, replace this clear with blit'ing the
     # background image.
     screen.fill(BLACK)
- 
+    
     # Drawing code should go here
     player.draw(screen)
     for i in range(0, len(list_of_opponents)):
