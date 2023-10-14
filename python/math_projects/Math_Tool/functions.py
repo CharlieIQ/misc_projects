@@ -1,6 +1,6 @@
 import math
 
-pi = 3.14159265359
+PI = 3.14159265359
 
 
 def py_theorem():
