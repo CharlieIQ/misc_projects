@@ -6,6 +6,8 @@ These are many different projects, tests, and tomfoolery that I have worked on o
 
 If anyone sees this, thank you for taking the time to see what I've made. Some of the code is probably very primative and ugly, but it will be fun to go back and tweak it once I get better.
 
+If any of these projects develop into a better idea, then they will get their own repository.
+
 ## My Top Projects
 My top projects demonstrate my programming knowledge:
 - Charlie Calculator (Ongoing Project)
