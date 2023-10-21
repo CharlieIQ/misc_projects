@@ -7,7 +7,7 @@ class Enemy:
         self.id = id
         self.x = r.randint(0, screen_x)
         self.y = r.randint(0, screen_y)
-        self.size = r.randint(10, 40)
+        self.size = r.randint(20, 40)
         self.color = r.choice(COLORS)
         self.screen_x = screen_x
         self.screen_y = screen_y
@@ -35,4 +35,9 @@ class Enemy:
     
     def get_current_position(self):
         return (self.x, self.y)
-        
+    
+    def checkForCollision(self, otherPos):
+        if (otherPos.get_current_position()[0] == self.x) and (otherPos.get_current_position()[1] == self.y):
+            self.xstep *= -1
+            self.xstep *= -1
+    
