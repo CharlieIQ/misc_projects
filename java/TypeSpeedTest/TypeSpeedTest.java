@@ -2,12 +2,11 @@ import java.math.*;
 import java.util.*;
 public class TypeSpeedTest {
     List<Word> words;
-
-
-    public TypeSpeedTest(){
+    
+    public TypeSpeedTest(int numOfWords){
          words = new LinkedList<>();
-
-         for (int i = 0; i < 1000; i++){
+        // Alter for loop to generate words
+         for (int i = 0; i < numOfWords; i++){
              Word w = new Word((int)(Math.random() * 7) + 2);
              w.generateRandomWord();
              words.add(w);
