@@ -72,14 +72,37 @@ public class Inventory {
 
     /**
      * Will sort items in list alphabetically
+     *
+     * Uses bubble sort O(n^2)
      */
     public void sortItemsAlphabetically(){
         int inventorySize = inventoryItems.size();
-        Item temp;
+        // Create temporary objects
+        Item temp1;
+        Item temp2;
 
+        // Sort Array
+        boolean wasSwapped;
         for (int i = 0; i < inventorySize; i++){
-            for (int j = 0; j < inventorySize; j++){
+            wasSwapped = false;
+            for (int j = i + 1; j < inventorySize; j++){
+                if (inventoryItems.get(i).getItemName().compareTo(inventoryItems.get(j).getItemName()) > 0) {
+                    temp1 = inventoryItems.get(i);
+                    temp2 = inventoryItems.get(j);
 
+                    inventoryItems.remove(j);
+                    inventoryItems.remove(i);
+
+
+                    inventoryItems.add(i, temp2);
+                    inventoryItems.add(j, temp1);
+
+                    wasSwapped = true;
+                }
+            }
+            // If list was already sorted, just exit
+            if (!wasSwapped){
+                break;
             }
         }
     }

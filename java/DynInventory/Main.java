@@ -8,22 +8,13 @@ public class Main {
         // ***USING THIS TO TEST UNTIL I GET JUNIT WORKING***
         Inventory test = new Inventory("tester");
 
-        test.addItem("ItemOne");
-        test.addItem("ItemTwo");
-        test.addItem("ItemThree");
+        test.addItems("A2", 1000);
+        test.addItems("B1", 1);
+        test.addItems("A1", 1);
 
         test.printInventory();
 
-        test.removeOneItem("ItemOne");
-
-        test.printInventory();
-
-        test.addItems("Apple", 2);
-        test.addItems("Orange", 3);
-
-        test.printInventory();
-
-        test.removeAllItemsOfOneType("Apple");
+        test.sortItemsAlphabetically();
 
         test.printInventory();
     }
